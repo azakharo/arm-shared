@@ -32,13 +32,9 @@ mod.service(
       uptimeUrl = serverAddr + uptimeUrl;
       dashboardUrl = serverAddr + dashboardUrl;
       ctrlPanelUrl = serverAddr + ctrlPanelUrl;
-      acceptant1Url = '/#' + acceptant1path;
-      acceptant2Url = '/#' + acceptant2path;
     }
-    else {
-      acceptant1Url = acceptantUrl + '/#' + acceptant1path;
-      acceptant2Url = acceptantUrl + '/#' + acceptant2path;
-    }
+    acceptant1Url = acceptantUrl + '/#' + acceptant1path;
+    acceptant2Url = acceptantUrl + '/#' + acceptant2path;
 
     function getBaseURL() {
       return baseURL;
