@@ -18,6 +18,7 @@ mod.service(
     var ctrlPanelUrl = '/public-dashboard';
     const acceptant1path = '/arm/accounting/stat-common-chart';
     const acceptant2path = '/acceptant2/statistic';
+    var armBankaUrl = '/bank';
     let acceptant1Url = '';
     let acceptant2Url = '';
     if (isRestDebug) {
@@ -32,6 +33,7 @@ mod.service(
       uptimeUrl = serverAddr + uptimeUrl;
       dashboardUrl = serverAddr + dashboardUrl;
       ctrlPanelUrl = serverAddr + ctrlPanelUrl;
+      armBankaUrl = serverAddr + armBankaUrl;
     }
     acceptant1Url = acceptantUrl + '/#' + acceptant1path;
     acceptant2Url = acceptantUrl + '/#' + acceptant2path;
@@ -62,6 +64,10 @@ mod.service(
 
     function getCtrlPanelUrl() {
       return ctrlPanelUrl;
+    }
+
+    function getArmBankaUrl() {
+      return armBankaUrl;
     }
 
     //$http.defaults.headers.common['Authorization'] = 'Basic ' + btoa('admin:admin');
@@ -2419,6 +2425,7 @@ mod.service(
       getUptimeUrl: getUptimeUrl,
       getDashboardUrl: getDashboardUrl,
       getCtrlPanelUrl: getCtrlPanelUrl,
+      getArmBankaUrl: getArmBankaUrl,
 
       getPaymentsBy: getPaymentsBy,
       isEsek: isEsek,
