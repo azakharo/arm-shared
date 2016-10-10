@@ -902,43 +902,12 @@ mod.service(
 
     // buses table
     function getPassengersInOut() {
+      if (isRestDebug) {
+        return restFake.getPassengersInOut();
+      }
+
       var passInOuts = [];
       var deffered = $q.defer();
-
-      // DUMMY data
-      //var startDay = moment().startOf('day').add(8, 'hours').subtract(30, 'days');
-      //var data = _.times(30, function(ind) {
-      //  var day = angular.copy(startDay);
-      //  day.add(ind + 1, 'days');
-      //  var inout = {};
-      //  inout.timestamp = day;
-      //  inout.busID = "c579kk";
-      //  inout.input = 1;
-      //  return inout;
-      //});
-      //var outData = _.times(30, function(ind) {
-      //  var day = angular.copy(startDay);
-      //  day.add(ind + 1, 'days').add(1, 'minutes');
-      //  var inout = {};
-      //  inout.timestamp = day;
-      //  inout.busID = "c579kk";
-      //  inout.output = 1;
-      //  return inout;
-      //});
-      //
-      //// add 1 more item
-      //var inout = {};
-      //inout.timestamp = moment().startOf('day').subtract(1, 'days').add(9, 'hours');
-      //inout.busID = "c579kc";
-      //inout.input = 3;
-      //data.push(inout);
-      //
-      //data = data.concat(outData);
-      //// sort by timestamp desc
-      //data = _.sortBy(data, function (iO) {
-      //  return -iO.timestamp;
-      //});
-      //deffered.resolve(data);
 
       getVehicles().then(
         function (srvVehicles) {
