@@ -1,10 +1,12 @@
 'use strict';
+
 var isRestDebug = true;
-var mod = angular.module('restService', []);
+
+var mod = angular.module('restService', ['restServiceFake']);
 
 mod.service(
   "myRest",
-  function ($http, $q, $log, $rootScope) {
+  function ($http, $q, $log, $rootScope, restFake) {
 
     var baseURL = '/api/cp/v1/';
     var turnoverBaseURL = '/api/pt/v1/';
@@ -1565,6 +1567,10 @@ mod.service(
     }
 
     function getStatPassengersPerDay(dtStart, dtEnd) {
+      if (isRestDebug) {
+        return restFake.getStatPassengersPerDay(dtStart, dtEnd);
+      }
+
       var deffered = $q.defer();
       var data = [];
       var params = {
@@ -1701,6 +1707,9 @@ mod.service(
     }
 
     function getStatBusesPerDay(dtStart, dtEnd) {
+      if (isRestDebug) {
+        return restFake.getStatBusesPerDay(dtStart, dtEnd);
+      }
       var deffered = $q.defer();
       var data = [];
       var params = {
