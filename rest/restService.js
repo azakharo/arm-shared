@@ -23,20 +23,20 @@ mod.service(
     var armBankaUrl = '/bank';
     let acceptant1Url = '';
     let acceptant2Url = '';
-    if (isRestDebug) {
-      var serverAddr = 'https://cp.sarov-itc.ru';
-      baseURL = serverAddr + baseURL;
-      turnoverBaseURL = serverAddr + turnoverBaseURL;
-      personDataBaseURL = serverAddr + personDataBaseURL;
-      operArmBaseURL = serverAddr + operArmBaseURL;
-      loginUrl = serverAddr + loginUrl;
-      transpStatusUrl = serverAddr + transpStatusUrl;
-      acceptantUrl = serverAddr + acceptantUrl;
-      uptimeUrl = serverAddr + uptimeUrl;
-      dashboardUrl = serverAddr + dashboardUrl;
-      ctrlPanelUrl = serverAddr + ctrlPanelUrl;
-      armBankaUrl = serverAddr + armBankaUrl;
-    }
+    //if (isRestDebug) {
+    //  var serverAddr = 'https://cp.sarov-itc.ru';
+    //  baseURL = serverAddr + baseURL;
+    //  turnoverBaseURL = serverAddr + turnoverBaseURL;
+    //  personDataBaseURL = serverAddr + personDataBaseURL;
+    //  operArmBaseURL = serverAddr + operArmBaseURL;
+    //  loginUrl = serverAddr + loginUrl;
+    //  transpStatusUrl = serverAddr + transpStatusUrl;
+    //  acceptantUrl = serverAddr + acceptantUrl;
+    //  uptimeUrl = serverAddr + uptimeUrl;
+    //  dashboardUrl = serverAddr + dashboardUrl;
+    //  ctrlPanelUrl = serverAddr + ctrlPanelUrl;
+    //  armBankaUrl = serverAddr + armBankaUrl;
+    //}
     acceptant1Url = acceptantUrl + '/#' + acceptant1path;
     acceptant2Url = acceptantUrl + '/#' + acceptant2path;
 
