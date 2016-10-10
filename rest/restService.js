@@ -1885,6 +1885,10 @@ mod.service(
     }
 
     function getStatPassKmPerDayPerOrg(dtStart, dtFinish) {
+      if (isRestDebug) {
+        return restFake.getStatPassKmPerDayPerOrg(dtStart, dtFinish);
+      }
+
       var deffered = $q.defer();
 
       var params = {

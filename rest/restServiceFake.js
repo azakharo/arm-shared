@@ -59,11 +59,40 @@ mod.service(
       return deffered.promise;
     }
 
+    function getStatPassKmPerDayPerOrg(dtStart, dtFinish) {
+      var deffered = $q.defer();
+
+      var orgs = _.times(3, ind => "Организация " + (ind + 1));
+
+      var days = getDays(dtStart, dtFinish);
+
+      var retVal = [];
+      orgs.forEach(function (org) {
+        var orgItem = {
+          name: org
+        };
+        var passKms = [];
+        days.forEach(function (day, dayIndex) {
+          passKms.push({
+            day: day,
+            passKm: _.round(_.random(0, 1000, true), 3)
+          });
+        });
+        orgItem.passKms = passKms;
+        retVal.push(orgItem);
+      });
+
+      deffered.resolve(retVal);
+
+      return deffered.promise;
+    }
+
     // Return public API
     return {
       getStatPassengersPerDay:  getStatPassengersPerDay,
       getStatBusesPerDay:       getStatBusesPerDay,
-      getStatPassengersAvgPerHour: getStatPassengersAvgPerHour
+      getStatPassengersAvgPerHour: getStatPassengersAvgPerHour,
+      getStatPassKmPerDayPerOrg: getStatPassKmPerDayPerOrg
     };
 
   });
