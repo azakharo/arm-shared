@@ -43,10 +43,27 @@ mod.service(
       return deffered.promise;
     }
 
+    function getStatPassengersAvgPerHour(dtStart, dtEnd, numOfDays) {
+      var deffered = $q.defer();
+      var data = [];
+
+      var hours = _.times(24, h => h);
+
+      hours.forEach(function (hour) {
+        var statItemInd = hour;
+        data.push(_.random(100));
+      });
+
+      deffered.resolve(data);
+
+      return deffered.promise;
+    }
+
     // Return public API
     return {
       getStatPassengersPerDay:  getStatPassengersPerDay,
-      getStatBusesPerDay:       getStatBusesPerDay
+      getStatBusesPerDay:       getStatBusesPerDay,
+      getStatPassengersAvgPerHour: getStatPassengersAvgPerHour
     };
 
   });

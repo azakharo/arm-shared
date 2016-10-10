@@ -1809,6 +1809,10 @@ mod.service(
     }
 
     function getStatPassengersAvgPerHour(dtStart, dtEnd, numOfDays) {
+      if (isRestDebug) {
+        return restFake.getStatPassengersAvgPerHour(dtStart, dtEnd);
+      }
+
       var deffered = $q.defer();
       var data = [];
       var params = {
