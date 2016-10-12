@@ -1588,6 +1588,9 @@ mod.service(
     }
 
     function getStatPassengersPerDayPerBus(dtStart, dtEnd) {
+      if (isRestDebug) {
+        return restFake.getStatPassengersPerDayPerBus(dtStart, dtEnd);
+      }
       var deffered = $q.defer();
       var data = [];
       var params = {
@@ -1638,6 +1641,9 @@ mod.service(
     }
 
     function getStatPassKmPerDayPerBus(dtStart, dtEnd) {
+      if (isRestDebug) {
+        return restFake.getStatPassKmPerDayPerBus(dtStart, dtEnd);
+      }
       var deffered = $q.defer();
       var data = [];
       var params = {

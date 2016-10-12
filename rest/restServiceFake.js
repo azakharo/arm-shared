@@ -14378,6 +14378,17 @@ mod.service(
       return deffered.promise;
     }
 
+    function getStatPassengersPerDayPerBus(dtStart, dtEnd) {
+      let deffered = $q.defer();
+      deffered.resolve([]);
+      return deffered.promise;
+    }
+
+    function getStatPassKmPerDayPerBus(dtStart, dtEnd) {
+      let deffered = $q.defer();
+      deffered.resolve([]);
+      return deffered.promise;
+    }
 
     // Return public API
     return {
@@ -14391,7 +14402,9 @@ mod.service(
       getTranspStatusRawData:       getTranspStatusRawData,
       getTariffs:                   getTariffs,
       getPaymentsBy:                getPaymentsBy,
-      getAccounts:                  getAccounts
+      getAccounts:                  getAccounts,
+      getStatPassengersPerDayPerBus: getStatPassengersPerDayPerBus,
+      getStatPassKmPerDayPerBus:    getStatPassKmPerDayPerBus
     };
 
   });
